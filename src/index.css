@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --light-green: #7ed56f;
+  --medium-green: #55c57a;
+  --dark-green: #28b485;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(128, 214, 112, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url("./assets/img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.heading-primary {
+  position: absolute;
+  color: #fff;
+  text-transform: uppercase;
+  display: grid;
+
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary h1 {
+  backface-visibility: hidden;
+}
+
+.heading-primary h1 span:first-child {
+  display: block;
+
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 35px;
+  animation: moveInLeft 1.5s ease-out;
+}
+
+.heading-primary h1 span:last-child {
+  width: inherit;
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 17.4px;
+  animation: moveInRight 1.5s ease-out;
+  /* animation-name: moveInRight;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 2s; */
+}
+
+.heading-primary a:link,
+.heading-primary a:visited {
+  transition: all 0.3s;
+  margin-top: 2rem;
+  display: block;
+  justify-self: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 3px;
+}
+
+.heading-primary a:hover {
+  cursor: pointer;
+  transform: translateY(-5%);
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.4);
+}
+
+.heading-primary a:active {
+  transform: translateY(-2%);
+  box-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.4);
+}
+
+.btn-white {
+  color: #777;
+  background-color: #fff;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+
+  70% {
+    transform: translateX(2%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(+20%);
+  }
+
+  70% {
+    transform: translateX(-2%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
