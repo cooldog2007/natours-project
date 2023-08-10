@@ -1,0 +1,19 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin btn-volume-animation {
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5%);
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba($color-black, 0.4);
+  }
+  &:active {
+    transform: translateY(-2%);
+    box-shadow: 0.2rem 0.2rem 0.3rem rgba($color-black, 0.4);
+  }
+}

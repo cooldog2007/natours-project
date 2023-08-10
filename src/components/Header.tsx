@@ -4,14 +4,15 @@ import logo from "../assets/img/logo-white.png";
 const Header = () => {
   return (
     <header className="header">
-      <div className="logo-box">
-        <img src={logo} alt="logo" className="logo" />
+      <div className="header__logo-box">
+        <img src={logo} alt="logo" className="header__logo" />
       </div>
-      <div className="heading-primary">
-        <h1>
-          <span>outdoors</span> <span>is where life happens</span>
+      <div className="header__text-box">
+        <h1 className="heading-primary">
+          <span className="heading-primary--main">outdoors</span>{" "}
+          <span className="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="/" className="btn-white">
+        <a href="/" className="btn btn--white btn--animated">
           view our tours
         </a>
       </div>

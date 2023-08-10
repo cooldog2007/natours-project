@@ -1,0 +1,15 @@
+.info {
+  h3,
+  p {
+    display: inline-block;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  &-item:not(:last-child) {
+    margin-bottom: 3rem;
+    margin-right: 0 !important;
+  }
+}

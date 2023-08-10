@@ -1,0 +1,46 @@
+@import "../abstracts/vars";
+@import "../abstracts/mixins";
+.row {
+  margin: 0 auto;
+  max-width: $grid-width;
+  // background-color: #eee;
+
+  @include clearfix;
+
+  [class^="col-"] {
+    // height: 5rem;
+    // background-color: sandybrown;
+    // display: inline-block;
+    float: left;
+    &:not(:last-child) {
+      margin-right: $gutter-horisontal;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - $gutter-horisontal) / 2);
+  }
+  .col-1-of-3 {
+    width: calc((100% - $gutter-horisontal * 2) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      (100% - $gutter-horisontal) - (100% - $gutter-horisontal * 2) / 3
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - $gutter-horisontal * 3) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      (100% - $gutter-horisontal) - ((100% - $gutter-horisontal) / 4) * 2
+    );
+  }
+}
