@@ -1,4 +1,5 @@
 import React from "react";
+import { useModalContext } from "../context/modalContext";
 type RGB = `${number}, ${number}, ${number}`;
 
 type CardProps = {
@@ -35,6 +36,8 @@ const Card = (props: CardProps) => {
     price,
   } = props;
 
+  const { setIsModalOpen } = useModalContext();
+
   return (
     <div className="card">
       <div className="card__side--front">
@@ -60,8 +63,8 @@ const Card = (props: CardProps) => {
           </span>
         </h3>
         <ul className="card__list">
-          {listItems.map((item) => {
-            return <li>{capitalizeString(item)}</li>;
+          {listItems.map((item, i) => {
+            return <li key={i}>{capitalizeString(item)}</li>;
           })}
         </ul>
       </div>
@@ -75,7 +78,12 @@ const Card = (props: CardProps) => {
           <p>
             only <span>{price}$</span>
           </p>
-          <a href="#" className="btn btn--white">
+
+          <a
+            href="#"
+            className="btn btn--white"
+            onClick={() => setIsModalOpen(true)}
+          >
             book now
           </a>
         </div>

@@ -1,0 +1,155 @@
+@import "../abstracts/vars";
+@import "../base/animations";
+
+.navigation {
+  // position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  left: 90%;
+  top: 7%;
+
+  label {
+    position: fixed;
+    font-size: 4rem;
+    display: inline-block;
+    cursor: pointer;
+    padding-top: 0.2rem;
+    text-align: center;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 15rem;
+    right: 0;
+    transform: translate(-6.5rem, 6.5rem);
+    box-shadow: 3px 3px 8px rgba($color-black, 0.3);
+    // transform: translateX(-50%);
+    background-color: $color-white;
+    // background-color: transparent;
+    z-index: 20;
+    &:hover .icon {
+      &::after {
+        transform: translateY(-10.2rem);
+      }
+      &::before {
+        transform: translateY(-5.7rem);
+      }
+    }
+  }
+
+  .icon {
+    margin: 0 auto;
+    display: inline-block;
+    transform: translateY(3.2rem);
+    height: 3px;
+    width: 3.5rem;
+    border-bottom: 3px solid $color-grey-dark;
+    &::after,
+    &::before {
+      transition: all 0.2s;
+      content: "";
+      display: inline-block;
+      height: 3px;
+      width: 3.5rem;
+      border-bottom: 3px solid $color-grey-dark;
+    }
+    &::after {
+      transform: translateY(-10.5rem);
+    }
+    &::before {
+      transform: translateY(-5.5rem);
+    }
+  }
+
+  &__nav {
+    animation: fadeIn 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+    animation-fill-mode: forwards;
+    display: none;
+    z-index: 15;
+    opacity: 0;
+    font-size: 4rem;
+    width: 20rem;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+
+    li {
+      display: inline-block;
+      width: 100%;
+      //   cursor: pointer;
+      &:not(:last-child) {
+        margin-bottom: $margin-small;
+      }
+      a {
+        transition: all 0.5s;
+        display: inline-block;
+        // border: 2px solid red;
+        line-height: 5.5rem;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        color: $color-white;
+        text-decoration: none;
+
+        height: 100%;
+        text-transform: uppercase;
+        background-image: linear-gradient(
+          110deg,
+          transparent 50%,
+          $color-white 50%
+        );
+        background-size: 220%;
+        background-position: left;
+        &:hover {
+          color: $color-primary;
+          background-position: right;
+          transform: translateX(3%);
+        }
+      }
+    }
+  }
+
+  .nav-checkbox:checked {
+    & ~ label {
+      color: aqua;
+      .icon {
+        border-bottom: 3px solid transparent;
+        &::after {
+          transform: translate(-0.2rem, -11.2rem) rotate(45deg);
+          width: 4rem;
+        }
+        &::before {
+          transform: translate(-0.2rem, -4.5rem) rotate(-45deg);
+          width: 4rem;
+        }
+      }
+    }
+
+    & ~ .nav-background {
+      transform: scale(7000%);
+    }
+
+    & ~ .navigation__nav {
+      display: block;
+      width: 40%;
+    }
+  }
+}
+
+.nav-background {
+  z-index: 10;
+  transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  position: fixed;
+  right: 0;
+  transform: translate(-7rem, 7rem);
+  display: inline-block;
+
+  width: 6rem;
+  height: 6rem;
+  border-radius: 15rem;
+  background-image: radial-gradient($color-primary-light, $color-primary-dark);
+}
+
+.nav-checkbox {
+  display: none;
+}

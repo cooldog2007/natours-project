@@ -1,0 +1,48 @@
+@import "../abstracts/vars";
+.footer {
+  height: 50vh;
+  padding: 10rem 0;
+  background-color: rgba($color-black, 0.85);
+  //   display: flex;
+  //   justify-content: center;
+
+  img {
+    display: block;
+    width: 15rem;
+    margin: 0 auto;
+    margin-bottom: $margin-big;
+  }
+  &__links-container,
+  &__copyright {
+    display: inline-block;
+    padding: 2rem 0;
+    border-top: 1px solid rgba($color-grey-light-1, 0.3);
+  }
+
+  &__links-container {
+    a {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $color-white;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: $default-font-size;
+    color: $color-white;
+    span {
+      font-family: "UnifrakturMaguntia", cursive;
+      text-shadow: 0 0 15px rgb(255, 187, 0);
+    }
+    a {
+      text-decoration: none;
+      color: transparent;
+      background-image: linear-gradient(to bottom, #ff2222, #f5e400);
+      background-clip: text;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import "../abstracts/vars.scss";
+@import "../base/animations";
+.story {
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: $margin-medium;
+  box-shadow: 3px 3px 8px rgba($color-black, 0.4);
+  background-color: rgba($color-white, 0.5);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-14deg);
+  > * {
+    transform: skewX(14deg);
+  }
+
+  &:hover {
+    figcaption {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    img {
+      transform: scale(0.8) translate(-32%, -15%);
+      filter: blur(3px) brightness(80%);
+    }
+  }
+  &__shape {
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    float: left;
+    background-color: bisque;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(14deg);
+
+    figcaption {
+      transition: all 0.5s;
+      animation-fill-mode: backwards;
+      text-align: center;
+      font-size: 1.7rem;
+
+      text-transform: uppercase;
+      color: $color-white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 20%);
+      opacity: 0;
+    }
+
+    img {
+      transition: all 0.5s;
+      height: 150%;
+      transform: translate(-25%, -10%);
+    }
+  }
+}
