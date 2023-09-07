@@ -1,6 +1,6 @@
 @import "../abstracts/vars";
 @import "../base/animations";
-
+@import "../abstracts/mixins";
 .navigation {
   // position: fixed;
   height: 100%;
@@ -19,8 +19,9 @@
     height: 7rem;
     width: 7rem;
     border-radius: 15rem;
-    right: 0;
-    transform: translate(-6.5rem, 6.5rem);
+    right: 6.5rem;
+    top: 6.5rem;
+
     box-shadow: 3px 3px 8px rgba($color-black, 0.3);
     // transform: translateX(-50%);
     background-color: $color-white;
@@ -33,6 +34,11 @@
       &::before {
         transform: translateY(-5.7rem);
       }
+    }
+
+    @include media-query(tab-port) {
+      right: 3rem;
+      top: 3rem;
     }
   }
 
@@ -54,6 +60,15 @@
     }
     &::after {
       transform: translateY(-10.5rem);
+      @include media-query(tab-land) {
+        transform: translateY(-10.3rem);
+      }
+      @include media-query(tab-port) {
+        transform: translateY(-10.3rem);
+      }
+      @include media-query(phone) {
+        transform: translateY(-10.2rem);
+      }
     }
     &::before {
       transform: translateY(-5.5rem);
@@ -68,12 +83,16 @@
     opacity: 0;
     font-size: 4rem;
     width: 20rem;
+    max-height: 90vh;
     position: fixed;
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -50%);
     margin: 0 auto;
 
+    @include media-query(phone) {
+      width: 90vw !important;
+    }
     li {
       display: inline-block;
       width: 100%;
@@ -82,7 +101,7 @@
         margin-bottom: $margin-small;
       }
       a {
-        transition: all 0.5s;
+        transition: all 0.6s;
         display: inline-block;
         // border: 2px solid red;
         line-height: 5.5rem;
@@ -98,8 +117,9 @@
           transparent 50%,
           $color-white 50%
         );
-        background-size: 220%;
+        background-size: 260%;
         background-position: left;
+        backface-visibility: hidden;
         &:hover {
           color: $color-primary;
           background-position: right;
@@ -117,6 +137,12 @@
         &::after {
           transform: translate(-0.2rem, -11.2rem) rotate(45deg);
           width: 4rem;
+          @include media-query(tab-port) {
+            transform: translate(-0.2rem, -11.25rem) rotate(45deg);
+          }
+          @include media-query(phone) {
+            transform: translate(-0.2rem, -11.3rem) rotate(45deg);
+          }
         }
         &::before {
           transform: translate(-0.2rem, -4.5rem) rotate(-45deg);
@@ -127,6 +153,9 @@
 
     & ~ .nav-background {
       transform: scale(7000%);
+      @include media-query(phone) {
+        transform: scale(5000%);
+      }
     }
 
     & ~ .navigation__nav {
@@ -140,14 +169,19 @@
   z-index: 10;
   transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   position: fixed;
-  right: 0;
-  transform: translate(-7rem, 7rem);
+  right: 7rem;
+  top: 7rem;
+  // transform: translate(-7rem, 7rem);
   display: inline-block;
 
   width: 6rem;
   height: 6rem;
   border-radius: 15rem;
   background-image: radial-gradient($color-primary-light, $color-primary-dark);
+  @include media-query(tab-port) {
+    right: 3.5rem;
+    top: 3.5rem;
+  }
 }
 
 .nav-checkbox {

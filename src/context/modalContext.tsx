@@ -44,7 +44,7 @@ export function createContext<A extends {} | null>() {
 const [useModalContext, ModalContextP] = createContext<ModalContextState>();
 
 const ModalContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <ModalContextP value={{ isModalOpen, setIsModalOpen }}>

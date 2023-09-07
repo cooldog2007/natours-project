@@ -11,8 +11,10 @@ const FeatureBox = (props: FeatureBoxProps) => {
   return (
     <div className="feature-box">
       <i className={`${icon} feature-box__icon`}></i>
-      <h3 className="heading-tetriary">{title}</h3>
-      <p className="paragraph feature-box__text">{text}</p>
+      <div className="feature-box__text-container">
+        <h3 className="heading-tetriary">{title}</h3>
+        <p className="paragraph feature-box__text">{text}</p>
+      </div>
     </div>
   );
 };

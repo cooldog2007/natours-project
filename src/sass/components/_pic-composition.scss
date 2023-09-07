@@ -1,11 +1,21 @@
+@import "../abstracts/mixins";
+
 .pic-composition {
   position: relative;
+  @include media-query(tab-port) {
+    display: block;
+    margin: 0 auto;
+  }
   img {
     position: absolute;
     transition: all 0.2s;
     width: 55%;
     outline-offset: 2rem;
     box-shadow: 3px 3px 8px rgba($color-black, 0.61);
+
+    @include media-query(tab-port) {
+      width: 35%;
+    }
 
     &:hover {
       outline: 1.5rem solid $color-primary;
@@ -18,21 +28,36 @@
 
   &:hover :not(:hover) {
     transform: scale(0.9);
+    @include media-query(tab-port) {
+      transform: scale(1);
+    }
   }
 
   .pic1 {
     z-index: 0;
+    @include media-query(tab-port) {
+      top: 10rem;
+    }
   }
 
   .pic2 {
     z-index: 1;
     left: 45%;
     top: 4rem;
+    @include media-query(tab-port) {
+      left: 65%;
+      top: 10rem;
+    }
   }
 
   .pic3 {
     z-index: 2;
     left: 20%;
     top: 12rem;
+    @include media-query(tab-port) {
+      left: 31.5%;
+      top: 7rem;
+      width: 37%;
+    }
   }
 }

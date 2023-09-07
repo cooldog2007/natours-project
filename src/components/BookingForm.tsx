@@ -13,10 +13,8 @@ const BookingForm = () => {
     <div className="booking-container">
       <div className="form-container">
         <form className="booking-form">
-          <h2 className="heading-secondary u-margin-bottom-medium">
-            start booking now!
-          </h2>
-          <div className="u-margin-bottom-medium">
+          <h2 className="heading-secondary">start booking now!</h2>
+          <div className="u-no-text-centering">
             <input
               id="name"
               type="text"
@@ -32,7 +30,7 @@ const BookingForm = () => {
               Full name
             </label>
           </div>
-          <div className="u-margin-bottom-medium">
+          <div className="u-no-text-centering">
             <input
               id="email"
               type="email"
@@ -48,7 +46,7 @@ const BookingForm = () => {
               Email adress
             </label>
           </div>
-          <fieldset className="u-margin-bottom-medium">
+          <fieldset>
             <div className="group-option">
               <div
                 className="radio-container"

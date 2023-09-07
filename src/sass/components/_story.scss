@@ -1,4 +1,5 @@
 @import "../abstracts/vars.scss";
+@import "../abstracts/mixins";
 @import "../base/animations";
 .story {
   width: 75%;
@@ -13,6 +14,16 @@
   transform: skewX(-14deg);
   > * {
     transform: skewX(14deg);
+  }
+
+  @include media-query(phone) {
+    transform: none;
+    > * {
+      transform: none;
+    }
+    padding: 3rem 4rem;
+    padding-left: 6rem;
+    width: 90%;
   }
 
   &:hover {
@@ -36,7 +47,9 @@
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(14deg);
-
+    @include media-query(phone) {
+      transform: translateX(-3rem);
+    }
     figcaption {
       transition: all 0.5s;
       animation-fill-mode: backwards;

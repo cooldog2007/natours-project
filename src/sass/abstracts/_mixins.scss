@@ -17,3 +17,26 @@
     box-shadow: 0.2rem 0.2rem 0.3rem rgba($color-black, 0.4);
   }
 }
+
+//media query manager
+/*
+valid arguments: phone, tab-port, tab-land
+*/
+
+@mixin media-query($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 78.5em) {
+      @content;
+    }
+  }
+}

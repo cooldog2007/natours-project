@@ -1,9 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import pic1 from "../assets/img/nat-1-large.jpg";
-import pic2 from "../assets/img/nat-2-large.jpg";
-import pic3 from "../assets/img/nat-3-large.jpg";
+import pic1Large from "../assets/img/nat-1-large.jpg";
+import pic2Large from "../assets/img/nat-2-large.jpg";
+import pic3Large from "../assets/img/nat-3-large.jpg";
+import pic1 from "../assets/img/nat-1.jpg";
+import pic2 from "../assets/img/nat-2.jpg";
+import pic3 from "../assets/img/nat-3.jpg";
 const About = () => {
   return (
     <main className="section-about">
@@ -41,9 +44,28 @@ const About = () => {
           </div>
           <div className="col-1-of-2 ">
             <div className="pic-composition">
-              <img src={pic1} alt="sneed" className="pic1" />
-              <img src={pic2} alt="sneed" className="pic2" />
-              <img src={pic3} alt="sneed" className="pic3" />
+              {/* <img src={pic1Large} alt="sneed" className="pic1" /> */}
+              <img
+                srcSet={`${pic1} 300w, ${pic1Large} 1000w`}
+                sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw , 300px"
+                alt="sneed"
+                className="pic1"
+                src={pic1Large}
+              />
+              <img
+                srcSet={`${pic2} 300w, ${pic2Large} 1000w`}
+                sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw , 300px"
+                src={pic2Large}
+                alt="sneed"
+                className="pic2"
+              />
+              <img
+                srcSet={`${pic3} 300w, ${pic3Large} 1000w`}
+                sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw , 300px"
+                src={pic3Large}
+                alt="sneed"
+                className="pic3"
+              />
             </div>
           </div>
         </div>
